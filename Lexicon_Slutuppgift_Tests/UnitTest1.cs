@@ -23,7 +23,7 @@ namespace Lexicon_Slutuppgift_Tests
             var l1 = lib1.GetListOfBooks();
             var l2 = lib2.GetListOfBooks();
 
-            for (int i = 0; i < l1.Count-1; i++)        //checking so that the elements in the lists in both libraries are equal
+            for (int i = 0; i < l1.Count; i++)        //checking so that the elements in the lists in both libraries are equal
             {
                 Assert.Equal(l1[i].title, l2[i].title);
                 Assert.Equal(l1[i].author, l2[i].author);
