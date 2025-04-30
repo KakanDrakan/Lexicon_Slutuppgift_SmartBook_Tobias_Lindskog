@@ -53,7 +53,7 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
             Console.Write("Book title or ISBN: ");
             var book = FindBook(Console.ReadLine());
             books.Remove(book);
-            LogEvent($"Removed {book.ToString()} from library list");
+            LogEvent($"Removed {book.ToStringWithoutISBN()} from library list");
         }
 
         public void BorrowBook()
@@ -63,7 +63,7 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
             Console.Write("Book title or ISBN: ");
             var book = FindBook(Console.ReadLine());
             book.Borrow(user);
-            LogEvent($"User {user} borrowed {book.ToString()}.");
+            LogEvent($"User {user} borrowed {book.ToStringWithoutISBN()}.");
         }
 
         public void ReturnBook()
@@ -71,7 +71,7 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
             Console.Write("Book title or ISBN: ");
             var book = FindBook(Console.ReadLine());
             book.Return();
-            LogEvent($"{book.ToString()} was returned.");
+            LogEvent($"{book.ToStringWithoutISBN()} was returned.");
         }
 
         public void AddUser()

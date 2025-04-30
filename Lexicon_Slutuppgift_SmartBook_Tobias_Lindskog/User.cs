@@ -54,7 +54,7 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
 
         public override string ToString()
         {
-            return name;
+            return $"{name}({id})";
         }
     }
 }

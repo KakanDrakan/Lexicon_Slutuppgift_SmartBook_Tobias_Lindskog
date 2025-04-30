@@ -64,12 +64,12 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
 
         public override string ToString()
         {
-            return $"{_author}'s {_category} {title}";
+            return string.Format("{0, -80} {1, -20}", $"{_author}'s {_category} {title}", $"ISBN: {_ISBN}");
         }
 
-        public string ToStringWithISBN()
+        public string ToStringWithoutISBN()
         {
-            return string.Format("{0, -80} {1, -20}", $"{_author}'s {_category} {title}", $"ISBN: {_ISBN}");
+            return $"{_author}'s {_category} {title}";
         }
 
         public string ToStringWithBorrower()
