@@ -87,12 +87,14 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
 
         public static Library LoadLibrary()
         {
+            Console.WriteLine("Library loaded from \"library.json\"");
             return JsonSerializer.Deserialize<Library>(File.ReadAllText("library.json"));
         }
 
         public static void SaveLibrary(Library lib)
         {
             File.WriteAllText("library.json", JsonSerializer.Serialize(lib));
+            Console.WriteLine("Library saved to \"library.json\"");
         }
     }
 }

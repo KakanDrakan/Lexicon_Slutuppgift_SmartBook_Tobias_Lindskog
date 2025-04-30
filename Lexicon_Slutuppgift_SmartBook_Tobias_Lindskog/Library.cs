@@ -32,7 +32,7 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
             
             books.Add(book);
             books = books.OrderBy(b => b.author).ThenBy(b => b.title).ToList();
-            LogEvent($"Added {book.ToString()} to library list");
+            LogEvent($"Added {book.ToStringWithoutISBN()} to library list");
             Console.WriteLine();
         }
 
@@ -81,8 +81,6 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
             user.name = Console.ReadLine();
             Console.Write("User ID: ");
             user.id = Console.ReadLine();
-            Console.Write("Phone number: ");
-            user.phone = Console.ReadLine();
             users.Add(user);
             users = users.OrderBy(b => b.name).ThenBy(b => b.id).ToList();
             LogEvent($"User {user.ToString()} was added!");
@@ -116,13 +114,13 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
         public Book FindBook(string nameOrISBN)
         {
             return books.FirstOrDefault(b => b.title == nameOrISBN || b.ISBN == nameOrISBN)
-                ?? throw new Exception("A book with that title or ISBN was not found.");
+                ?? throw new Exception($"A book with title or ISBN {nameOrISBN} was not found.");
         }
 
         public User FindUser(string id)
         {
             return users.FirstOrDefault(u => u.id == id) 
-                ?? throw new Exception("A user with that ID was not found.");
+                ?? throw new Exception($"A user with ID {id} was not found.");
         }
 
         public void SearchForBooks()
@@ -148,8 +146,8 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
             Console.Write("User ID: ");
             var input = Console.ReadLine();
             var user = FindUser(input);
-            var foundBooks = books.Where(b => b.borrower == user)
-                ?? throw new Exception($"User {user.name} hasn't borrowed any books");
+            var foundBooks = books.Where(b => b.borrower == user);
+            if (foundBooks.Count() == 0) throw new Exception($"User {user.name} hasn't borrowed any books");
             Console.WriteLine($"User {user.name} has borrowed the following book(s):");
             ListItems(foundBooks);
         }

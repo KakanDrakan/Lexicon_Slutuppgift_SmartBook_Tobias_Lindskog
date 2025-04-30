@@ -12,7 +12,6 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
         
         private string _name;
         private string _id;
-        private string _phone;
         
         public string name {
             get { return _name; }
@@ -31,13 +30,6 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
                 else throw new Exception("Invalid id: can only contain digits");
             }
         }
-        public string phone 
-        {
-            get { return _phone; }
-            set { if (value.All(c => char.IsDigit(c) || c == '-' || c == ' ' || c == '+')) _phone = value;
-                else throw new Exception("Invalid phone number: can only contain digits, hyphens and spaces");
-            }
-        }
 
         public List<Book> borrowedBooks { get; set; } = new List<Book>();
         public User()
@@ -49,7 +41,6 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
         {
             _name = name;
             _id = id;
-            _phone = phone;
         }
 
         public override string ToString()
