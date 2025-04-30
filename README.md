@@ -10,6 +10,8 @@ A file called "LibraryLog.txt" logs when books and users are added/removed, and 
 
 Typing 11 in the menu extracts a report called "BorrowedBooksReport.txt". It is also printed in the console.
 
+Typing 15 loads a sample library with some books (list with 3) and a user with id 0 named "Default"
+
 
 
 xUnit Tests:
