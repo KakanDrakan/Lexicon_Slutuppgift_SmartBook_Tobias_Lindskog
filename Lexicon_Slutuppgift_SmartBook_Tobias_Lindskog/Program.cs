@@ -40,7 +40,8 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
                     $"11. Extract a report of borrowed books {Environment.NewLine}" +
                     $"12. Clear event log \"LibraryLog.txt\"{Environment.NewLine}" +
                     $"13. Save library to JSON {Environment.NewLine}" +
-                    $"14. Load library from JSON");
+                    $"14. Load library from JSON{Environment.NewLine}" +
+                    $"15. Load a sample library");
                 string input = Console.ReadLine();
                 Console.WriteLine();
 
@@ -76,6 +77,8 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
                         SaveLibrary(lib); break;
                     case "14":
                         lib = LoadLibrary(); break;
+                    case "15":
+                    lib = LoadSampleLibrary(); break;
                     default:
                         Console.WriteLine("Invalid input, try again"); break;
                         
@@ -88,6 +91,7 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
         public static Library LoadLibrary()
         {
             Console.WriteLine("Library loaded from \"library.json\"");
+            Console.WriteLine();
             return JsonSerializer.Deserialize<Library>(File.ReadAllText("library.json"));
         }
 
@@ -95,6 +99,14 @@ namespace Lexicon_Slutuppgift_SmartBook_Tobias_Lindskog
         {
             File.WriteAllText("library.json", JsonSerializer.Serialize(lib));
             Console.WriteLine("Library saved to \"library.json\"");
+            Console.WriteLine();
+        }
+
+        public static Library LoadSampleLibrary()
+        {
+            Console.WriteLine("Library loaded from \"sampleLibrary.json\"");
+            Console.WriteLine();
+            return JsonSerializer.Deserialize<Library>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "sampleLibrary.json")));
         }
     }
 }

@@ -1,0 +1,96 @@
+{
+    "books": [
+        {
+            "title": "The Trial",
+            "ISBN": "978-0-8052-1040-8",
+            "author": "Franz Kafka",
+            "category": "novel",
+            "borrower": null
+        },
+        {
+            "title": "Crime and Punishment",
+            "ISBN": "978-0-19-282358-8",
+            "author": "Fyodor Dostoevsky",
+            "category": "novel",
+            "borrower": null
+        },
+        {
+            "title": "The Idiot",
+            "ISBN": "978-1-85-326175-6",
+            "author": "Fyodor Dostoevsky",
+            "category": "novel",
+            "borrower": null
+        },
+        {
+            "title": "1984",
+            "ISBN": "978-0-1981-8521-5",
+            "author": "George Orwell",
+            "category": "dystopean novel",
+            "borrower": null
+        },
+        {
+            "title": "Prince Caspian",
+            "ISBN": "978-0-06-440500-3",
+            "author": "C. S. Lewis",
+            "category": "portal fantasy novel",
+            "borrower": null
+        },
+        {
+            "title": "The Complete Chronicles of Narnia",
+            "ISBN": "978-0-06-028137-3",
+            "author": "C. S. Lewis",
+            "category": "portal fantasy novel",
+            "borrower": null
+        },
+        {
+            "title": "The Lion, the witch and the Wardrobe",
+            "ISBN": "978-0-06-440942-1",
+            "author": "C. S. Lewis",
+            "category": "portal fantasy novel",
+            "borrower": null
+        },
+        {
+            "title": "The Great Gatsby",
+            "ISBN": "978-0-8108-9195-1",
+            "author": "F. Scott Fitzgerald",
+            "category": "novel",
+            "borrower": null
+        },
+        {
+            "title": "The Call of Cthulu",
+            "ISBN": "978-1-6246-5044-4",
+            "author": "H. P. Lovecraft",
+            "category": "short story",
+            "borrower": null
+        },
+        {
+            "title": "To Kill a Mockingbird",
+            "ISBN": "978-0-8103-8566-5",
+            "author": "Harper Lee",
+            "category": "Gothic novel",
+            "borrower": null
+        },
+        {
+            "title": "Frankenstein",
+            "ISBN": "978-0-8156-2640-4",
+            "author": "Mary Shelly",
+            "category": "Gothic novel",
+            "borrower": null
+        },
+        {
+            "title": "Twilight",
+            "ISBN": "978-0-316-16017-9",
+            "author": "Stephenie Meyer",
+            "category": "romance novel",
+            "borrower": null
+        }
+    ],
+    "users": [
+        {
+            "name": "Default",
+            "id": "0",
+            "phone": "0",
+            "borrowedBooks": []
+        }
+    ]
+}
